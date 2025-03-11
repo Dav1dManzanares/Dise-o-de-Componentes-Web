@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/output.css">
+</head>
+<body>
+    <header class="sticky top-0 bg-indigo-600 text-white shadow-lg z-50">
+        <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <h1 class="text-xl font-bold">tailwind demo</h1>
+            <div class="hidden md:flex space-x-4">
+                <a href="#posicionamiento" class="hover:text-indigo-200">posicionamiento</a>
+                <a href="#display" class="hover:text-indigo-200">display</a>
+                <a href="#grid" class="hover:text-indigo-200">grid</a>
+            </div>
+            <button class="md:hidden p-2 rounded bg-indigo-500 hover:bg-indigo-5}400">menu</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="mb-12 text-center">
+            <h2 class="text-3xl font-bold mb-4">conception de css en tailwind</h2>
+            <p class="max-w-2xl mx-auto text-gray-600">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit
+                . Quisquam, quod. Quisquam, quod. Quisquam, quod. Quisquam, quod.
+            </p>
+        </section>
+    </main>
+
+    <section id="posicionamiento" class="mb-12 bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-2xl font-bold mb-6 border-b pb-2">posicionamiento</h2>
+        <div class="relative bg-indigo-200 h-64 rounded-lg p-4 mb-6">
+            <div class="absolute top-0 left-0 bg-red-500 text-white p-2 rounded">
+                top-0 left-0
+            </div>
+
+            <div class="absolute top-0 right-0 bg-red-500 text-white p-2 rounded">
+                top-0 right-0
+            </div>
+
+            <div class="absolute bottom-0 left-0 bg-red-500 text-white p-2 rounded">
+                bottom-0 left-0
+            </div>
+
+            <div class="absolute bottom-0 right-0 bg-red-500 text-white p-2 rounded">
+                bottom-0 right-0
+            </div>
+
+            <div class="absolute inset-0 m-auto w-32 h-10 bg-yellow-500 text-center flex items-center justify-between rounded">
+                centrado
+            </div>
+
+        </div>
+
+        <div class="flex flex-wrap -mx-2">
+            <div class="w-full md:w-1/2 px-2 mb-4">
+                <div class="border border-gray-300 p-4 rounded">
+                    <h3 class="font-bold mb-2">posicion relativa</h3>
+                    <div class="relative p-4 bg-indigo-200 rounded">
+                        <div class=" bg-indigo-300 p-2 rounded">elemento base</div>
+                        <div class="relative bg-indigo-500 text-white p-2 top-2 left-2 rounded mt-2">
+                            elemento desplazado (top-2 left-2)
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="fixed bottom-4 right-4 bg-green-500 text-white rounded shadow-lg">
+                boton fijo(pueva a scrollear)
+            </div>
+        </div>
+    </section>
+
+    <section id="display" class="mb-12 bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-2xl font-bold mb-6 border-b pb-2">display</h2>
+
+        <div class="mb-8">
+            <h3 class="font-bold mb-2">flex</h3>
+            <div class=" bg-gray-200 p-4 rounded mb-4">
+                <span class="block bg-blue-200 p-2 mb-2">elemento 1</span>
+                <span class="block bg-blue-200 p-2 mb-2">elemento 2</span>
+            </div>
+
+            <div class="bg-gray-300 p-4 rotate m-4">
+                <span class="inline bg-green-200 p-2">inline</span>
+                <span class="inline bg-green-200 p-2">solo ocupa</span>
+                <span class="inline bg-green-200 p-2">el ancho necesario</span>
+            </div>
+
+            <div class="bg-gray-300 p-4 rounded">
+                <span class="inline-block bg-green-200 p-2 m-1">inline-block</span>
+                <span class="inline-block bg-green-200 p-2 m-1 w-32 h-16">con altura y ancho</span>
+                <span class="inline-block bg-green-200 p-2 m-1">definido</span>
+            </div>
+        </div>
+
+        <div>
+            <h3 class="font-bold mb-2">flexbox</h3>
+            <div class="flex flex-wrap mb-4 bg-gray-200 p-4 rounded">
+                <span class="bg-blue-200 p-3 m-1">elemento 1</span>
+                <span class="bg-blue-200 p-3 m-1">elemento 2</span>
+                <span class="bg-blue-200 p-3 m-1">elemento 3</span>
+            </div>
+
+            <div class="flex justify-between mb-4 bg-gray-200 p-4 rounded">
+                <span class="bg-blue-200 p-3 ">elemento 1</span>
+                <span class="bg-blue-200 p-3 ">elemento 2</span>
+                <span class="bg-blue-200 p-3 ">elemento 3</span>
+
+            </div>
+
+            <div class="flex items-center h-24 mb-4 gb-gray-200 p-4 rounded">
+                <span class="bg-blue-200 p-3 h-8">elemento 1</span>
+                <span class="bg-blue-200 p-3 h-16">elemento 2</span>
+                <span class="bg-blue-200 p-3 h-20">elemento 3</span>
+
+            </div>
+        </div>
+
+        <!-- <div id="display" class="mb-12 bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl font-bold mb-6 border-b pb-2">display</h2>
+            <div class="flex flex-wrap -mx-2">
+                <div class="w-full md:w-1/2 px-2 mb-4">
+                    <div class="border border-gray-300 p-4 rounded">
+                        <h3 class="font-bold mb-2">flex</h3>
+                        <div class="flex bg-indigo-200 p-4 rounded">
+                            <div class="bg-indigo-500 text-white p-2 rounded">elemento 1</div>
+                            <div class="bg-indigo-500 text-white p-2 rounded ml-2">elemento 2</div>
+                            <div class="bg-indigo-500 text-white p-2 rounded ml-2">elemento 3</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 px-2 mb-4">
+                    <div class="border border-gray-300 p-4 rounded">
+                        <h3 class="font-bold mb-2">grid</h3>
+                        <div class="grid grid-cols-3 gap-4 bg-indigo-200 p-4 rounded">
+                            <div class="bg-indigo-500 text-white p-2 rounded">elemento 1</div>
+                            <div class="bg-indigo-500 text-white p-2 rounded">elemento 2</div>
+                            <div class="bg-indigo-500 text-white p-2 rounded">elemento 3</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </section>
+</body>
+</html>

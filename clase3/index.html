@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tailwind CSS - Posicionamiento, Display y Grids</title>
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <style>
+    .scrollable-section {
+      height: 250px;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 min-h-screen">
+  <!-- Sección de encabezado con posicionamiento sticky -->
+  <header class="sticky top-0 bg-indigo-600 text-white shadow-lg z-50">
+    <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <h1 class="text-xl font-bold">Tailwind Demo</h1>
+      <div class="hidden md:flex space-x-4">
+        <a href="#posicionamiento" class="hover:text-indigo-200">Posicionamiento</a>
+        <a href="#display" class="hover:text-indigo-200">Display</a>
+        <a href="#grid" class="hover:text-indigo-200">Grid</a>
+      </div>
+      <button class="md:hidden p-2 rounded bg-indigo-500 hover:bg-indigo-400">Menú</button>
+    </nav>
+  </header>
+
+  <main class="container mx-auto px-4 py-8">
+    <!-- Sección de introducción -->
+    <section class="mb-12 text-center">
+      <h2 class="text-3xl font-bold mb-4">Conceptos de CSS con Tailwind</h2>
+      <p class="max-w-2xl mx-auto text-gray-600">
+        Demostración de posicionamiento, propiedades de display y sistema de grid usando Tailwind CSS.
+      </p>
+    </section>
+
+    <!-- Sección de Posicionamiento -->
+    <section id="posicionamiento" class="mb-12 bg-white p-6 rounded-lg shadow-md">
+      <h2 class="text-2xl font-bold mb-6 border-b pb-2">Posicionamiento</h2>
+      
+      <div class="relative bg-gray-200 h-64 rounded-lg p-4 mb-6">
+        <div class="absolute top-0 left-0 bg-red-500 text-white p-2 rounded">
+          top-0 left-0
+        </div>
+        <div class="absolute top-0 right-0 bg-blue-500 text-white p-2 rounded">
+          top-0 right-0
+        </div>
+        <div class="absolute bottom-0 left-0 bg-green-500 text-white p-2 rounded">
+          bottom-0 left-0
+        </div>
+        <div class="absolute bottom-0 right-0 bg-purple-500 text-white p-2 rounded">
+          bottom-0 right-0
+        </div>
+        <div class="absolute inset-0 m-auto w-32 h-10 bg-yellow-500 text-center flex items-center justify-center rounded">
+          Centrado
+        </div>
+      </div>
+
+      <div class="flex flex-wrap -mx-2">
+        <div class="w-full md:w-1/2 px-2 mb-4">
+          <div class="border border-gray-300 p-4 rounded">
+            <h3 class="font-bold mb-2">Posición Relativa</h3>
+            <div class="relative p-4 bg-gray-200 rounded">
+              <div class="bg-indigo-300 p-2 rounded">Elemento base</div>
+              <div class="relative bg-indigo-500 text-white p-2 top-2 left-2 rounded mt-2">
+                Elemento desplazado (top-2 left-2)
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="fixed bottom-4 right-4 bg-green-500 p-2 text-white rounded shadow-lg">
+          Botón Fijo (prueba a scrollear)
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de Display -->
+    <section id="display" class="mb-12 bg-white p-6 rounded-lg shadow-md">
+      <h2 class="text-2xl font-bold mb-6 border-b pb-2">Propiedades de Display</h2>
+      
+      <div class="mb-8">
+        <h3 class="font-bold mb-2">Display Block vs Inline vs Inline-Block</h3>
+        <div class="bg-gray-200 p-4 rounded mb-4">
+          <span class="block bg-blue-200 p-2 mb-2">Elemento Block</span>
+          <span class="block bg-blue-200 p-2 mb-2">Ocupa todo el ancho disponible</span>
+        </div>
+        
+        <div class="bg-gray-200 p-4 rounded mb-4">
+          <span class="inline bg-green-200 p-2">Inline</span>
+          <span class="inline bg-green-200 p-2">Solo ocupa</span>
+          <span class="inline bg-green-200 p-2">el ancho necesario</span>
+        </div>
+        
+        <div class="bg-gray-200 p-4 rounded">
+          <span class="inline-block bg-purple-200 p-2 m-1">Inline-block</span>
+          <span class="inline-block bg-purple-200 p-2 m-1 w-32 h-16">Con altura y ancho</span>
+          <span class="inline-block bg-purple-200 p-2 m-1">Definidos</span>
+        </div>
+      </div>
+      
+      <div>
+        <h3 class="font-bold mb-2">Flexbox</h3>
+        <div class="flex flex-wrap mb-4 bg-gray-200 p-4 rounded">
+          <div class="bg-red-200 p-3 m-1">Flex 1</div>
+          <div class="bg-red-300 p-3 m-1">Flex 2</div>
+          <div class="bg-red-400 p-3 m-1">Flex 3</div>
+        </div>
+        
+        <div class="flex justify-between mb-4 bg-gray-200 p-4 rounded">
+          <div class="bg-yellow-200 p-3">Start</div>
+          <div class="bg-yellow-300 p-3">Center</div>
+          <div class="bg-yellow-400 p-3">End</div>
+        </div>
+        
+        <div class="flex items-center h-24 mb-4 bg-gray-200 p-4 rounded">
+          <div class="bg-blue-200 p-3 h-8">Small</div>
+          <div class="bg-blue-300 p-3 h-16">Medium</div>
+          <div class="bg-blue-400 p-3 h-20">Large</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de Grid -->
+    <section id="grid" class="mb-12 bg-white p-6 rounded-lg shadow-md">
+      <h2 class="text-2xl font-bold mb-6 border-b pb-2">Sistema de Grid</h2>
+      
+      <!-- Grid básico -->
+      <h3 class="font-bold mb-2">Grid Básico</h3>
+      <div class="grid grid-cols-3 gap-4 mb-8">
+        <div class="bg-indigo-100 p-4 rounded">Celda 1</div>
+        <div class="bg-indigo-200 p-4 rounded">Celda 2</div>
+        <div class="bg-indigo-300 p-4 rounded">Celda 3</div>
+        <div class="bg-indigo-400 p-4 rounded">Celda 4</div>
+        <div class="bg-indigo-500 p-4 rounded text-white">Celda 5</div>
+        <div class="bg-indigo-600 p-4 rounded text-white">Celda 6</div>
+      </div>
+      
+      <!-- Grid con columnas personalizadas -->
+      <h3 class="font-bold mb-2">Grid con Áreas Personalizadas</h3>
+      <div class="grid grid-cols-4 gap-4 mb-8">
+        <div class="bg-green-100 p-4 rounded col-span-2">col-span-2</div>
+        <div class="bg-green-200 p-4 rounded">1 columna</div>
+        <div class="bg-green-300 p-4 rounded">1 columna</div>
+        <div class="bg-green-400 p-4 rounded">1 columna</div>
+        <div class="bg-green-500 p-4 rounded text-white col-span-3">col-span-3</div>
+      </div>
+      
+      <!-- Grid Responsivo -->
+      <h3 class="font-bold mb-2">Grid Responsivo</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="bg-pink-100 p-4 rounded">
+          <p>Responsivo</p>
+          <p class="text-sm">1 col en móvil, 2 cols en tablet, 4 cols en desktop</p>
+        </div>
+        <div class="bg-pink-200 p-4 rounded">
+          <p>Responsivo</p>
+          <p class="text-sm">1 col en móvil, 2 cols en tablet, 4 cols en desktop</p>
+        </div>
+        <div class="bg-pink-300 p-4 rounded">
+          <p>Responsivo</p>
+          <p class="text-sm">1 col en móvil, 2 cols en tablet, 4 cols en desktop</p>
+        </div>
+        <div class="bg-pink-400 p-4 rounded">
+          <p>Responsivo</p>
+          <p class="text-sm">1 col en móvil, 2 cols en tablet, 4 cols en desktop</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ejemplo combinado -->
+    <section class="bg-white p-6 rounded-lg shadow-md">
+      <h2 class="text-2xl font-bold mb-6 border-b pb-2">Ejemplo Combinado</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+        <div class="md:col-span-3 bg-gray-200 p-4 rounded">
+          <h3 class="font-bold mb-2">Sidebar</h3>
+          <ul class="scrollable-section">
+            <li class="mb-2 p-2 bg-gray-300 rounded">Elemento 1</li>
+            <li class="mb-2 p-2 bg-gray-300 rounded">Elemento 2</li>
+            <li class="mb-2 p-2 bg-gray-300 rounded">Elemento 3</li>
+            <li class="mb-2 p-2 bg-gray-300 rounded">Elemento 4</li>
+            <li class="mb-2 p-2 bg-gray-300 rounded">Elemento 5</li>
+            <li class="mb-2 p-2 bg-gray-300 rounded">Elemento 6</li>
+            <li class="mb-2 p-2 bg-gray-300 rounded">Elemento 7</li>
+            <li class="mb-2 p-2 bg-gray-300 rounded">Elemento 8</li>
+            <li class="mb-2 p-2 bg-gray-300 rounded">Elemento 9</li>
+            <li class="mb-2 p-2 bg-gray-300 rounded">Elemento 10</li>
+          </ul>
+        </div>
+        
+        <div class="md:col-span-9">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <div class="bg-blue-100 p-4 rounded">
+              <h3 class="font-bold mb-2">Tarjeta con Posicionamiento</h3>
+              <div class="relative h-32 bg-blue-200 rounded">
+                <div class="absolute bottom-2 right-2 bg-blue-500 text-white p-2 rounded">
+                  Botón Posicionado
+                </div>
+              </div>
+            </div>
+            
+            <div class="bg-blue-100 p-4 rounded">
+              <h3 class="font-bold mb-2">Tarjeta con Flexbox</h3>
+              <div class="flex justify-between items-center h-32 bg-blue-200 rounded p-2">
+                <div class="bg-blue-300 p-2 rounded">Izquierda</div>
+                <div class="bg-blue-400 p-2 rounded">Centro</div>
+                <div class="bg-blue-500 text-white p-2 rounded">Derecha</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="grid grid-cols-3 gap-4">
+            <div class="bg-purple-100 p-4 rounded flex flex-col justify-between h-40">
+              <h4 class="font-bold">Tarjeta 1</h4>
+              <p class="text-sm">Usando flex-col para organizar contenido verticalmente</p>
+              <button class="bg-purple-500 text-white p-2 rounded mt-2 w-full">Acción</button>
+            </div>
+            
+            <div class="bg-purple-100 p-4 rounded flex flex-col justify-between h-40">
+              <h4 class="font-bold">Tarjeta 2</h4>
+              <p class="text-sm">Usando flex-col para organizar contenido verticalmente</p>
+              <button class="bg-purple-500 text-white p-2 rounded mt-2 w-full">Acción</button>
+            </div>
+            
+            <div class="bg-purple-100 p-4 rounded flex flex-col justify-between h-40">
+              <h4 class="font-bold">Tarjeta 3</h4>
+              <p class="text-sm">Usando flex-col para organizar contenido verticalmente</p>
+              <button class="bg-purple-500 text-white p-2 rounded mt-2 w-full">Acción</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-gray-800 text-white py-6">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div>
+          <h3 class="text-lg font-bold mb-2">Tailwind Demo</h3>
+          <p class="text-gray-400">Demostración de conceptos de posicionamiento, display y grid con Tailwind CSS.</p>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-bold mb-2">Enlaces</h3>
+          <ul>
+            <li><a href="#posicionamiento" class="text-gray-400 hover:text-white">Posicionamiento</a></li>
+            <li><a href="#display" class="text-gray-400 hover:text-white">Display</a></li>
+            <li><a href="#grid" class="text-gray-400 hover:text-white">Grid</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-bold mb-2">Contacto</h3>
+          <div class="flex items-center">
+            <input type="email" placeholder="Tu email" class="p-2 rounded-l bg-gray-700 text-white border-none focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            <button class="bg-indigo-600 p-2 rounded-r">Enviar</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="mt-6 pt-4 border-t border-gray-700 text-center text-gray-500">
+        &copy; 2025 Tailwind Demo - Todos los derechos reservados
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
